@@ -11,25 +11,7 @@ function getCustomer() {
 
 }
 
-function setCustomer() {
-    // let customer = {
-    //     account_no: "12021001",
-    //     name: "Abhay",
-    //     email: "abhay@gmail.com",
-    //     balance: "20000"
-    // }
-    // localStorage.setItem("12021001", JSON.stringify(customer));
-    // allCustomers = customer;
-    for (let i = 0; i < custData.length; i++) {
-    let customer = {
-        account_no: custData[i].account_no,
-        name: custData[i].name,
-        email: custData[i].email,
-        balance: custData[i].balance
-    }
-    localStorage.setItem(custData[i].account_no, JSON.stringify(customer));
-}
-}
+
 
 function renderData(customer){
     let listCustomers = `
@@ -42,6 +24,8 @@ function renderData(customer){
         </tr>    
         `;
     tableRow.insertAdjacentHTML( 'beforeend', listCustomers );
+
+
     // tableRow.appendChild(listCustomers);
     // tableRow.innerHTML = listCustomers;
 }
@@ -57,7 +41,6 @@ function btnDetails(){
 
 
 function loader(){
-    setCustomer();
     getCustomer();
     btnDetails();
 }
