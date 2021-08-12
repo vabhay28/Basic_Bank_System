@@ -23,7 +23,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="home.html">Home</a>
       </li>
@@ -81,8 +81,18 @@
                         <input type="number" class="form-control" id="transfer_amount"  placeholder="Amount" required>
                       </div>
                       
-                      <button type="reset" id="clear" name="clear" class="btn btn-danger pull-left ">Reset</button>    
-                      <button type="button" id="submit" name="submit" class="btn btn-success pull-right ">Transfer</button>
+                      <div class="form-group">
+                        <button type="reset" id="clear" name="clear" class="btn btn-danger pull-left ">Reset</button>    
+                        <button type="button" id="submit" name="submit" class="btn btn-success pull-right ">Transfer</button>
+                      </div>
+                    
+                      <div class="form-group" id="success-msg">
+                        
+                      </div>
+
+                      <div class="form-group" id="failed-msg">
+                        
+                      </div>
           </form>
       </div>
   </div>

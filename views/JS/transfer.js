@@ -4,6 +4,8 @@ let sEmail = document.getElementById("s_email");
 let rEmail = document.getElementById("r_email");
 let transferAmount = document.getElementById("transfer_amount");
 let submit = document.getElementById("submit");
+let successMsg = document.getElementById("success-msg");
+let failedMsg = document.getElementById("failed-msg");
 
 document.querySelector('#cList_s_name').addEventListener('input', optionSelects);
 document.querySelector('#cList_r_name').addEventListener('input', optionSelectr);
@@ -88,7 +90,18 @@ function autofillInfor(id){
             }
             localStorage.setItem(receiver.account_no, JSON.stringify(customer_r));
 
+            successMsg.innerHTML = `<div class="alert alert-success" role="alert" >
+            Your transaction is Successful.
+          </div>`
 
+          
+        }
+        else{
+            failedMsg.innerHTML = `<div class="alert alert-danger" role="alert" >
+            Your transaction can not be executed.
+          </div>
+          `
+          
         }
     }
     // localStorage.setItem(custData[i].account_no, JSON.stringify(customer));
