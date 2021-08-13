@@ -8,7 +8,10 @@ let msg = document.getElementById("msg");
 
 
 
-let transactionHistory = [];
+let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory'));
+if(transactionHistory == null){
+    transactionHistory = [];
+}
 document.querySelector('#cList_s_name').addEventListener('input', optionSelects);
 document.querySelector('#cList_r_name').addEventListener('input', optionSelectr);
 
@@ -116,7 +119,6 @@ function autofillInfor(id){
           }
           localStorage.setItem(tid, JSON.stringify(trans_hist));
         //   code for transaction history ends
-        console.log(JSON.stringify(transactionHistory));
         localStorage.setItem('transactionHistory', JSON.stringify(transactionHistory));
 
         console.log(tid);
