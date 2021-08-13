@@ -51,7 +51,7 @@
 
 
 <!-- Customer List View  -->
-
+<div class="container">
 <div class="table-responsive">
 <table class="table table-striped" onload="customerView()">
   <thead>
@@ -67,6 +67,27 @@
     
   </tbody>
 </table>
+</div>
+</div>
+
+<!-- code for customer Details Pop-up -->
+<div class="modal fade" id="popupcustomerdetails" tabindex="-1" role="dialog" aria-labelledby="popupcustomerdetailsTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="popupcustomerdetailsTitle">Customer Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="pop-cust-details">
+        Hello Customers
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Customer List View  Ends -->
 <script src="views/JS/custData.js"></script> 

@@ -20,14 +20,12 @@ function renderData(customer){
             <td>${customer.name}</td>
             <td>${customer.email}</td>
             <td>${customer.balance}</td>
-            <td><button class="btn btn-info" id="${customer.account_no}">Details</Button></td>        
+            <td><button type="buttpn"  class="btn btn-info" id="${customer.account_no}" data-toggle="modal" data-target="#popupcustomerdetails">Details</Button></td>        
         </tr>    
         `;
     tableRow.insertAdjacentHTML( 'beforeend', listCustomers );
 
 
-    // tableRow.appendChild(listCustomers);
-    // tableRow.innerHTML = listCustomers;
 }
 
 function btnDetails(){

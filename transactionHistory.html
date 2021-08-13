@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home Page of Bank Website</title>
+  <title>Transaction History</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -49,6 +49,7 @@
 
 
 <!-- Transaction History Start  -->
+<div class="container">
 <div class="table-responsive">
     <table class="table table-striped">
       <thead>
@@ -60,46 +61,21 @@
           <th>Date & Time</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
+      <tbody id="transaction_history_table_data">
+        <!-- <tr>
           <td>0001</td>
           <td>John</td>
           <td>Martin</td>
           <td>1000</td>
           <td><button type="button" class="btn btn-info">Info</button></td>
-        </tr>
-        <tr>
-          <td>0002</td>
-          <td>Martin</td>
-          <td>Dixon</td>
-          <td>2000</td>
-          <td><button type="button" class="btn btn-info">Info</button></td>
-        </tr>
-        <tr>
-          <td>0003</td>
-          <td>Dixon</td>
-          <td>Martin</td>
-          <td>1000</td>
-          <td><button type="button" class="btn btn-info">Info</button></td>
-        </tr>
-        <tr>
-          <td>0004</td>
-          <td>Dixon/td>
-          <td>John</td>
-          <td>1000</td>
-          <td><button type="button" class="btn btn-info">Info</button></td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
     </div>
+  </div>
     <!-- Transaction History Ends -->
     
-<!--
-<div class="container">
-  <h3>History page</h3>
-  <p>Building in process</p>
-</div>
--->
-    
+    <script src="views/JS/custData.js"></script> 
+    <script src="./views/JS/transactionHistory.js"></script>
 </body>
 </html>
