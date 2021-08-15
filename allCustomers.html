@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Customer View Page of Bank Website</title>
   <meta charset="utf-8">
@@ -8,89 +9,120 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+
   <link rel="stylesheet" href="./views/css/style.css">
 
 </head>
 
 <body>
-<!-- Navigation Bar Start -->
+  <!-- Navigation Bar Start -->
 
-<nav class="navbar navbar- navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="home.html">A Co-op. Bank Ltd.</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <ul class="nav navbar-nav mr-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="home.html">Home</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="allCustomers.html">View Customers</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="transferMoney.html">Money Transfer</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="transactionHistory.html">Transaction History</a>
-    </li>
-  
-    <li class="nav-item">
-      <a class="nav-link" href="https://www.thesparksfoundationsingapore.org/">About us</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contact us</a>
-    </li>
-  </ul>
-   
+  <nav class="navbar navbar- navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="home.html">A Co-op. Bank Ltd.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="allCustomers.html">View Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="transferMoney.html">Money Transfer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="transactionHistory.html">Transaction History</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.thesparksfoundationsingapore.org/">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactus.html">Contact us</a>
+        </li>
+      </ul>
+
+    </div>
+    </div>
+  </nav>
+  <!-- Navigation Bar Finish -->
+
+
+  <!-- Customer List View  -->
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-striped" onload="customerView()">
+        <thead>
+          <tr>
+            <th>Account No.</th>
+            <th>Name</th>
+            <th>Email </th>
+            <th>Balance</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody id="table-row">
+
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-</nav>
-<!-- Navigation Bar Finish -->
 
+  <!-- code for customer Details Pop-up -->
+  <div class="modal fade" id="popupcustomerdetails" tabindex="-1" role="dialog"
+    aria-labelledby="popupcustomerdetailsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body" id="pop-cust-details">
 
-<!-- Customer List View  -->
-<div class="container">
-<div class="table-responsive">
-<table class="table table-striped" onload="customerView()">
-  <thead>
-    <tr>
-      <th>Account No.</th>
-      <th>Name</th>
-      <th>Email </th>
-      <th>Balance</th>
-      <th>Activity</th>
-    </tr>
-  </thead>
-  <tbody id="table-row" >
-    
-  </tbody>
-</table>
-</div>
-</div>
+          <div class="card user-card-full">
+            <div class="row m-l-0 m-r-0">
+              <div class="col-sm-4 bg-c-lite-green user-profile">
+                <div class="card-block text-center text-white">
+                  <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
+                      alt="User-Profile-Image"> </div>
+                  <h6 class="f-w-600" id="prf-name-card">Hembo Tingor</h6>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="card-block">
+                  <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Account Number</p>
+                      <h6 class="text-muted f-w-400" id="prf-acc-no"></h6>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Name</p>
+                      <h6 class="text-muted f-w-400" id="prf-name"></h6>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Email</p>
+                      <h6 class="text-muted f-w-400" id="prf-email"></h6>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Balance</p>
+                      <h6 class="text-muted f-w-400" id="prf-balance"></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<!-- code for customer Details Pop-up -->
-<div class="modal fade" id="popupcustomerdetails" tabindex="-1" role="dialog" aria-labelledby="popupcustomerdetailsTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="popupcustomerdetailsTitle">Customer Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="pop-cust-details">
-        Hello Customers
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Customer List View  Ends -->
-<script src="views/JS/custData.js"></script> 
-<script src="views/JS/allCustomer.js"></script> 
+  <!-- Customer List View  Ends -->
+  <script src="views/JS/custData.js"></script>
+  <script src="views/JS/allCustomer.js"></script>
 </body>
+
 </html>

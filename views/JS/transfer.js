@@ -121,7 +121,7 @@ function autofillInfor(id){
         //   code for transaction history ends
         localStorage.setItem('transactionHistory', JSON.stringify(transactionHistory));
 
-        console.log(tid);
+    
         }
         else{
             msg.innerHTML = `<div class="alert alert-danger" role="alert" >
