@@ -8,10 +8,7 @@ function getCustomer() {
         let customer = JSON.parse(localStorage.getItem(custData[i].account_no));
         renderData(customer);
     }
-
 }
-
-
 
 function renderData(customer) {
     let listCustomers = `

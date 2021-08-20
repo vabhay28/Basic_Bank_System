@@ -10,8 +10,6 @@ function setCustomer() {
 }
 }
 
-
-
 function loader(){
     setCustomer();
 }
